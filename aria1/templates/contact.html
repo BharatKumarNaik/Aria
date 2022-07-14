@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+<img src="https://source.unsplash.com/random/1080x1080/?phone" style="display: block; margin-left: auto;margin-right: auto;width: 50%;">
+<h1 style="text-align: center;">Contact Us</h1>
+<form method="post" action="/aria/contact/" style="display: block; margin-left: auto;margin-right: auto;width: 50%;">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" name="email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="phone">Enter your phone number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="+91">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Issues</label>
+        <textarea  name="text" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type your concern"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary btn-round btn-fil btn-wd">Submit</button>  
+</form>
+{% endblock body %}
